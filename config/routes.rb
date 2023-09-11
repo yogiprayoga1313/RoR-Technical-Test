@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Product routes
   resources :products, only: [:new, :create]
   resources :products, only: [:index], defaults: { format: 'json' }
+  resources :products
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
