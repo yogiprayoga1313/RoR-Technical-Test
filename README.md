@@ -27,4 +27,4 @@ Things you may want to cover:
 Please search ini Directory App/Public/product.json
 
 * Dashboard view
-(app/assets/images/Dashboard.jpg)
+![Dashboard](app/assets/images/Dashboard.jpg)
