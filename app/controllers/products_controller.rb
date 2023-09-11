@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    # @latest_products = Product.order(created_at: :desc).limit(10)
     @products = Product.all
     render json: @products
   end

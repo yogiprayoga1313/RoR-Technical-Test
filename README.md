@@ -21,4 +21,10 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* 
+
+* Data All Book .json
+Please search ini Directory App/Public/product.json
+
+* Dashboard view
+(app/assest/iamges/Dashboard.jpg)
