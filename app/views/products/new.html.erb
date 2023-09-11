@@ -1,0 +1,32 @@
+<h1>Products New</h1>
+<p>Create New Product</p>
+
+<% if @product.errors.any? %>
+  <div class="alert alert-danger">
+    <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_for @product, url: products_path, method: :post do |form| %>
+  <div class="field">
+    <%= form.label :Title %><br/>
+    <%= form.text_field :judul %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Publication_Year %><br/>
+    <%= form.number_field :tahun_terbit %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions">
+    <%= form.submit "Buat Produk" %>
+  </div>
+<% end %>

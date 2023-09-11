@@ -1,0 +1,13 @@
+<h1>Halaman Detail Book</h1>
+<% if current_user%>
+<p> Hello <%= current_user.email%> !</p>
+    <p>
+        You have succesfuly authenticated with your Devise Account.
+        You are ready to interact with this applications.
+    </p>
+<%else%>
+    <p>You are not Signed in.</p>
+    <%= link_to "Sign Up", new_user_registration_path%>
+    <br/>
+    <%= link_to "Login", new_user_session_path%>
+<% end %> 

@@ -1,0 +1,41 @@
+<h1>Dashboard</h1>
+<p>Find Your favorite book in Marker</p>
+
+<% if current_user%>
+<p> Hello <%= current_user.username%> !</p>
+<p> You are a [<%= current_user.role%>]
+
+    <%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete %>
+<%else%>
+    <p>You are not Signed in.</p>
+    <%= link_to "Sign Up", new_user_registration_path%>
+    <br/>
+    <%= link_to "Login", new_user_session_path%>
+<% end %>    
+
+
+<h1>Find your book to reading!</h1>
+
+<a href="/new">Create Product</a>
+<h2>Book List</h2>
+
+<table class="book-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Publication Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.judul %></td>
+        <td><%= book.tahun_terbit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @books %> <!-- Menampilkan link pagination -->
+
+
